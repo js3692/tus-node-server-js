@@ -15,7 +15,7 @@ You can provide a list of options to the handler functions:
 const tus = require('tus-node-server');
 const server = new tus.Server();
 server.datastore = new tus.FileStore({
-  directory: '/files/videos/user-uploads',
+  directory: 'files/videos/user-uploads',
   path: '/api/videos/tus-upload'
 });
 
@@ -103,7 +103,7 @@ Specify a directory to save your files. If 'directory' is not specified, then Fi
 const tus = require('tus-node-server');
 const server = new tus.Server();
 server.datastore = new tus.FileStore({
-  directory: '/files/videos/user-uploads',
+  directory: 'files/videos/user-uploads',
   path: '/api/videos/tus-upload'
 });
 
@@ -126,7 +126,7 @@ It may sometimes be necessary to use a custom file name to stay consistent with 
 const tus = require('tus-node-server');
 const server = new tus.Server();
 server.datastore = new tus.FileStore({
-  directory: '/files/videos/user-uploads',
+  directory: 'files/videos/user-uploads',
   path: '/api/videos/tus-upload'
 });
 
