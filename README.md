@@ -175,19 +175,20 @@ app.all('/api/videos/tus-upload/*', function(req, res) {
 The client can send an 'Upload-Metadata' header to send miscellaneous metadata (like filenames). See [here](http://tus.io/protocols/resumable-upload.html#upload-metadata) for more details.
 
 ```
-$ curl -X POST -I 'http://localhost:8000/files' \
+$ curl -X POST -I 'http://localhost:1337/files/' \
                -H 'Tus-Resumable: 1.0.0' \
-               -H 'Upload-Length: 617379340'
-               -H 'Upload-Metadata: '
+               -H 'Upload-Length: 55109624' \
+               -H 'Upload-Metadata: filename bXktY29vbC12aWRlbw=='
 
 HTTP/1.1 201 Created
 Tus-Resumable: 1.0.0
-Location: http://localhost:8000/files/my-cool-video
+Location: http://localhost:1337/files/my-cool-video
 
-$ curl -X HEAD -I 'http://localhost:8000/files/88473063b1a06f11e2eced7983d4ab2e' \
+$ curl -X HEAD -I 'http://localhost:1337/files/my-cool-video' \
                -H 'Tus-Resumable: 1.0.0'
 HTTP/1.1 200 OK
 Tus-Resumable: 1.0.0
-Upload-length: 
-Upload-Metadata:
+Upload-Offset: 0
+Upload-Length: 55109624
+Upload-Metadata: {"filename":"my-cool-video"}
 ```
