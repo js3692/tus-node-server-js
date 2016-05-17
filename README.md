@@ -40,10 +40,11 @@ app.all('/api/videos/tus-upload/*', function(req, res) {
 
       // The response must be ended if
       // using a custom error handler.
-      // Otherwise, tus-node-server will
-      // end the response and take care
-      // of the status codes consistent
-      // with the protocol.
+      // If a custom error handler is not
+      // defined for a handler, tus-node-server
+      // will end the response and take care
+      // of the status codes consistent with
+      // the protocol.
       res.sendStatus(statusCode);
     }
   });
