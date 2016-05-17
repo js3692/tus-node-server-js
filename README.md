@@ -57,7 +57,7 @@ app.all('/api/videos/tus-upload/*', function(req, res) {
 
 - [Build a standalone server](#case-1) (in original repo)
 - [Deploy tus-node-server as Express middleware](#case-2) (in original repo)
-- [Custom file directories](#case-3) (in original repo)
+- [Custom file directories](#case-3) (new)
 - [Custom file names](#case-4) (new)
 - [Execute callbacks](#case-5) (new)
 - [Use 'Upload-Metadata' header](#case-6) (new)
@@ -158,8 +158,16 @@ app.patch('/api/videos/tus-upload/:fileId', function(req, res) {
     onSuccess (fileName, filePath, done) {
       // Do stuff here
 
-      // 'done' MUST be called.
-      done();
+      // ...and maybe some async stuff
+      database.ping((err, res) => {
+        if (err) console.error(err);
+        else {
+          console.log('Hey');
+
+          // 'done' MUST be called.
+          done();
+        }
+      });
     }
   });
 });
