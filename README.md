@@ -1,5 +1,5 @@
 # tus-node-server
-Fork of [tus-node-server](https://github.com/tus/tus-node-server), with edits from [tus-express](https://github.com/nuntio/tus-express) added.
+Fork of [tus-node-server](https://github.com/tus/tus-node-server), with edits from my own work in [tus-express](https://github.com/nuntio/tus-express) added.
 
 [tus](http://tus.io/) is a new open protocol for resumable uploads built on HTTP. This is the [tus protocol 1.0.0](http://tus.io/protocols/resumable-upload.html) node.js server implementation. This repo is adapted to fit some use cases in [Express](http://expressjs.com/). Feel free to let me know if you have any comments or feedback!
 
